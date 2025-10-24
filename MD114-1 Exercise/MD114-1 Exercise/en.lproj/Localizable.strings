@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  MD114-1 Exercise
+
+  Created by Gabriela Sanchez on 09/09/25.
+  
+*/
+
+// Navigation Titles
+"sports_categories_title" = "Sport Categories";
+
+// Prompts
+"select_a_category_prompt" = "Select a category to see the sports.";
+
+// Sport Categories
+"category_ball_sports" = "Ball Sports";
+"category_water_sports" = "Water Sports";
+"category_track_field" = "Track & Field";
+
+// --- Ball Sports ---
+"sport_soccer" = "Soccer";
+"detail_soccer" = "A game played by two teams of eleven players with a round ball that may not be touched with the hands or arms during play except by the goalkeepers.";
+
+"sport_basketball" = "Basketball";
+"detail_basketball" = "A game played between two teams of five players in which goals are scored by throwing a ball through a netted hoop fixed above each end of the court.";
+
+"sport_tennis" = "Tennis";
+"detail_tennis" = "A game in which two or four players strike a ball with rackets over a net stretched across a court.";
+
+"sport_baseball" = "Baseball";
+"detail_baseball" = "A ball game played between two teams of nine on a field with a diamond-shaped circuit of four bases.";
+
+// --- Water Sports ---
+"sport_swimming" = "Swimming";
+"detail_swimming" = "The sport or activity of propelling oneself through water using the limbs.";
+
+"sport_surfing" = "Surfing";
+"detail_surfing" = "The sport or pastime of riding a wave on a surfboard.";
+
+"sport_water_polo" = "Water Polo";
+"detail_water_polo" = "A seven-a-side water sport in which the players try to score by throwing the ball into the opponents' goal.";
+
+// --- Track & Field ---
+"sport_running" = "Running";
+"detail_running" = "The sport of running in races or for exercise.";
+
+"sport_long_jump" = "Long Jump";
+"detail_long_jump" = "An athletic event in which competitors try to jump as far as possible along the ground in one leap.";
+
+"sport_javelin" = "Javelin Throw";
+"detail_javelin" = "An athletic event in which a javelin is thrown as far as possible.";

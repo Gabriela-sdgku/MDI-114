@@ -1,0 +1,51 @@
+/* 
+  Localizable.strings
+  MD114-1 Exercise
+
+  Created by Gabriela Sanchez on 09/09/25.
+  
+*/
+
+// Navigation Titles
+"sports_categories_title" = "Categorías de Deportes";
+
+// Prompts
+"select_a_category_prompt" = "Selecciona una categoría para ver los deportes.";
+
+// Sport Categories
+"category_ball_sports" = "Deportes de Pelota";
+"category_water_sports" = "Deportes Acuáticos";
+"category_track_field" = "Atletismo";
+
+// --- Ball Sports ---
+"sport_soccer" = "Fútbol";
+"detail_soccer" = "Un juego disputado por dos equipos de once jugadores con un balón redondo que no puede ser tocado con las manos o los brazos durante el juego, excepto por los porteros.";
+
+"sport_basketball" = "Baloncesto";
+"detail_basketball" = "Un juego entre dos equipos de cinco jugadores en el que se anotan goles lanzando un balón a través de un aro con red fijado en cada extremo de la cancha.";
+
+"sport_tennis" = "Tenis";
+"detail_tennis" = "Un juego en el que dos o cuatro jugadores golpean una pelota con raquetas sobre una red extendida a lo largo de una cancha.";
+
+"sport_baseball" = "Béisbol";
+"detail_baseball" = "Un juego de pelota entre dos equipos de nueve en un campo con un circuito en forma de diamante de cuatro bases.";
+
+// --- Water Sports ---
+"sport_swimming" = "Natación";
+"detail_swimming" = "El deporte o actividad de impulsarse a través del agua usando las extremidades.";
+
+"sport_surfing" = "Surf";
+"detail_surfing" = "El deporte o pasatiempo de montar una ola en una tabla de surf.";
+
+"sport_water_polo" = "Waterpolo";
+"detail_water_polo" = "Un deporte acuático de siete por lado en el que los jugadores intentan marcar lanzando el balón a la portería contraria.";
+
+// --- Track & Field ---
+"sport_running" = "Correr";
+"detail_running" = "El deporte de correr en carreras o por ejercicio.";
+
+"sport_long_jump" = "Salto de Longitud";
+"detail_long_jump" = "Una prueba atlética en la que los competidores intentan saltar lo más lejos posible en el suelo en un solo salto.";
+
+"sport_javelin" = "Lanzamiento de Jabalina";
+"detail_javelin" = "Una prueba atlética en la que se lanza una jabalina lo más lejos posible.";
