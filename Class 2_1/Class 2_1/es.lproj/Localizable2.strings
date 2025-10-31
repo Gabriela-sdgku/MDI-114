@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Class 2_1
+
+  Created by Gabriela Sanchez on 31/10/25.
+  
+*/
+
+"myGroups" = "Mis Grupos";
+"account" = "Cuenta";
+"myTodoTracker" = "Mi Rastreador de Tareas";
+"groupNotFound" = "Grupo no encontrado.";
+"welcome" = "Bienvenido";
+"selectGroupPrompt" = "Selecciona un grupo, o crea uno usando el ícono de 'engranaje' en la barra lateral.";
+"profile" = "Perfil";
+"tasks" = "Tareas";
+"Save" = "Guardar";
+"noTasks" = "No hay ninguna tarea";
+"addYourFirstTask" = "Agregue su primera tarea en el campo de texto de arriba";
+"NewTaskDescription" = "Nueva descripción de la tarea...";

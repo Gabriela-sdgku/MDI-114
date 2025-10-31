@@ -1,0 +1,66 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Account" : {
+
+    },
+    "Add" : {
+
+    },
+    "Add New Group" : {
+
+    },
+    "addYourFirstTask" : {
+
+    },
+    "Danger Zone" : {
+
+    },
+    "Done" : {
+
+    },
+    "Edit Profile" : {
+
+    },
+    "Group Name (e.g., Work)" : {
+
+    },
+    "Group not found." : {
+
+    },
+    "Log Out" : {
+
+    },
+    "Manage Groups" : {
+
+    },
+    "My Groups" : {
+
+    },
+    "My Todo Tracker" : {
+
+    },
+    "NewTaskDescription" : {
+
+    },
+    "noTasks" : {
+
+    },
+    "Save" : {
+
+    },
+    "Select a group, or create one using the 'gear' icon in the sidebar." : {
+
+    },
+    "Settings" : {
+
+    },
+    "Welcome" : {
+
+    },
+    "You haven't added any groups yet." : {
+
+    }
+  },
+  "version" : "1.0"
+}

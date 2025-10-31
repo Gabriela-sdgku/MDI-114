@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Class 2_1
+
+  Created by Gabriela Sanchez on 31/10/25.
+  
+*/
+
+"myGroups" = "My Groups";
+"account" = "Account";
+"myTodoTracker" = "My Todo Tracker";
+"groupNotFound" = "Group not found.";
+"welcome" = "Welcome";
+"selectGroupPrompt" = "Select a group, or create one using the 'gear' icon in the sidebar.";
+"profile" = "Profile";
+"tasks" = "Tasks";
+"Save" = "Save";
+"noTasks" =  "No Tasks Yet";
+"addYourFirstTask" = "Add your first task in the text field above.";
+"NewTaskDescription" = "New task description...";
