@@ -2,7 +2,7 @@
 //  TodoViewModel.swift
 //  Class 1_4
 //
-//  Created by Gabriela Sanchez on 30/10/25.
+//  Created by SDGKU on 30/10/25.
 //
 
 import SwiftUI
@@ -12,7 +12,7 @@ class SettingsStore {
     var profile: UserProfile
     
     init() {
-        self.profile = UserProfile()
+        self.profile = UserProfile(name: "Your Name", profileImageName: "person.crop.circle")
     }
     
     func updateName(_ newName: String) {
