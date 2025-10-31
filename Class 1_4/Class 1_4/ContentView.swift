@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Class 1_4
 //
-//  Created by Gabriela Sanchez on 31/10/25.
+//  Created by SDGKU on 31/10/25.
 //
 
 import SwiftUI
@@ -13,21 +13,32 @@ struct ContentView: View {
         case profile
         case group(UUID)
     }
+    
     @Query(sort: \TodoGroup.name) private var groups: [TodoGroup]
-    
     @Environment(SettingsStore.self) private var settings
-    @Environment(\.modelContext) private var modelContext
-    @State private var selection: NavigationItem?
-    @State private var isAddingNewGroup = false
     
+    @State private var selection: NavigationItem?
+    @State private var showGroupManagerSheet = false
+
     var body: some View {
         NavigationSplitView {
             List(selection: $selection) {
-                Section("My Groups") {
+                Section {
                     ForEach(groups) { group in
                         NavigationLink(value: NavigationItem.group(group.id)) {
                             Label(group.name, systemImage: group.iconName)
                         }
+                    }
+                } header: {
+                    HStack {
+                        Text("My Groups")
+                        Spacer()
+                        Button {
+                            showGroupManagerSheet = true
+                        } label: {
+                            Image(systemName: "gearshape")
+                        }
+                        .buttonStyle(.borderless)
                     }
                 }
                 
@@ -39,27 +50,8 @@ struct ContentView: View {
             }
             .listStyle(.sidebar)
             .navigationTitle("My Todo Tracker")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        isAddingNewGroup = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $isAddingNewGroup) {
-                NewGroupView(isPresented: $isAddingNewGroup)
-                    .environment(\.modelContext, modelContext)
-            }
-            .overlay {
-                if groups.isEmpty {
-                    ContentUnavailableView {
-                        Label("No Groups", systemImage: "checklist.unchecked")
-                    } description: {
-                        Text("Tap the '+' button to add your first group.")
-                    }
-                }
+            .sheet(isPresented: $showGroupManagerSheet) {
+                GroupManagerView()
             }
             
         } detail: {
@@ -76,12 +68,20 @@ struct ContentView: View {
                         }
                     }
                 } else {
-                    ContentUnavailableView("Select a Group", systemImage: "sidebar.left")
+                    ContentUnavailableView(
+                        "Welcome",
+                        systemImage: "checklist.unchecked",
+                        description: Text("Select a group, or create one using the 'gear' icon in the sidebar.")
+                    )
                 }
             }
             .navigationTitle(navigationTitle(for: selection))
         }
-        
+        .onAppear {
+            if selection == nil, let firstGroup = groups.first {
+                selection = .group(firstGroup.id)
+            }
+        }
     }
     
     private func navigationTitle(for item: NavigationItem?) -> String {
@@ -94,65 +94,3 @@ struct ContentView: View {
         }
     }
 }
-
-struct NewGroupView: View {
-    @Binding var isPresented: Bool
-    @Environment(\.modelContext) private var modelContext
-    
-    @State private var groupName = ""
-    @State private var selectedIcon = "list.bullet"
-    
-    let icons = ["list.bullet", "person.fill", "briefcase.fill", "star.fill", "heart.fill", "book.fill"]
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Group Name") {
-                    TextField("Personal, Work, etc.", text: $groupName)
-                }
-                
-                Section("Icon") {
-                    Picker("Icon", selection: $selectedIcon) {
-                        ForEach(icons, id: \.self) { icon in
-                            Image(systemName: icon).tag(icon)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
-            }
-            .navigationTitle("New Group")
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { isPresented = false }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        saveGroup()
-                    }
-                    .disabled(groupName.isEmpty)
-                }
-            }
-        }
-    }
-    
-    private func saveGroup() {
-        let newGroup = TodoGroup(name: groupName, iconName: selectedIcon)
-        modelContext.insert(newGroup)
-        isPresented = false
-    }
-}
-
-
-#Preview {
-    do {
-        let config = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container = try ModelContainer(for: TodoGroup.self, TodoItem.self, configurations: config)
-        
-        return ContentView()
-            .modelContainer(container)
-            .environment(SettingsStore())
-    } catch {
-        return Text("Failed to create preview: \(error.localizedDescription)")
-    }
-}
-
