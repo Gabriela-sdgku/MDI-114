@@ -2,7 +2,7 @@
 //  Models.swift
 //  Class 1_4
 //
-//  Created by Gabriela Sanchez on 30/10/25.
+//  Created by SDGKU on 30/10/25.
 //
 
 import SwiftUI
@@ -14,8 +14,8 @@ class TodoItem: Identifiable {
     @Attribute(.unique) var id: UUID
     var title: String
     var isCompleted: Bool
-    var group: TodoGroup?
     var creationDate: Date
+    var group: TodoGroup?
 
     init(id: UUID = UUID(), title: String, isCompleted: Bool = false, creationDate: Date = .now) {
         self.id = id
@@ -30,6 +30,7 @@ class TodoGroup: Identifiable {
     @Attribute(.unique) var id: UUID
     var name: String
     var iconName: String
+    
     @Relationship(deleteRule: .cascade, inverse: \TodoItem.group)
     var todos: [TodoItem]? = []
 
@@ -41,6 +42,6 @@ class TodoGroup: Identifiable {
 }
 
 struct UserProfile {
-    var name: String = "Alex Smith"
-    var profileImageName: String = "person.crop.circle"
+    var name: String
+    var profileImageName: String
 }
